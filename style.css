@@ -8,6 +8,12 @@
     list-style: none;
 }
 
+section{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* header section styling */
 .header{
@@ -87,4 +93,64 @@ li a:hover::before{
 #menu-icon{
     font-size: 2rem;
     color: #fff;
+}
+/*about styles*/
+
+/* profile container */
+.profile-container{
+    width:340px;
+    height:340px;
+    border-radius:50%;
+    background: linear-gradient(135deg,#5f7cff,#ff5bbd);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    box-shadow:0 25px 50px rgba(0,0,0,0.25);
+    overflow:hidden;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* actual image */
+.profile-image{
+    width:85%;
+    height:auto;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+
+/* contact section styling */
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.contact .section-title{
+    font-size: 7rem;
+    font-weight: 700;
+}
+.contact .contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.contact .infos{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color:black
+}
+.contact-info .infos:hover{
+    transform: scale(1.2);
+}
+.contact-info .infos a{
+    color: black;
 }
