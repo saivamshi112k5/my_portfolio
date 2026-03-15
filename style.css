@@ -123,6 +123,86 @@ li a:hover::before{
     100%{transform:translateY(0);}
 }
 
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .about-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10rem;
+}
+
+.about .info-box{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.info-box h3{
+    font-size: 1.8rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.info-box h1 {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.info-box span{
+    background: linear-gradient(to right,rgb(0,157,255),rgb(255,0,255));
+    background-clip: text;
+    color: transparent;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.button-group {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.btn{
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid black;
+    cursor: pointer;
+    font-weight: 500;
+    text-wrap: nowrap;
+    transition: 0.4s ease-in-out;
+}
+
+.btn:hover{
+    background-color: black;
+    color: #fff;
+}
+
+.socials{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.socials i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: black;
+    transition: 0.4s ease-in-out;
+}
+
+.socials i:hover{
+    transform: scale(1.05);
+    color: rgb(0,157,255);
+}
+
 
 /* contact section styling */
 .contact{
