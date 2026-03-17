@@ -23,6 +23,17 @@ function updateNavStateOnResize() {
 window.addEventListener("resize", updateNavStateOnResize);
 updateNavStateOnResize();
 
+window.addEventListener("load", () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+
+    if (window.location.hash && window.location.hash !== "#about") {
+        history.replaceState(null, null, `${window.location.pathname}${window.location.search}#about`);
+    }
+});
+
 const typed = new Typed('.multiple-text', {
   strings: [
     'Btech CSE Student',
