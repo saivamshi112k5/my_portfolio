@@ -1,6 +1,6 @@
 const menuIcon = document.getElementById("menu-icon");
 const navLinks = document.querySelector(".navlinks");
-const navItems = document.querySelectorAll(".navlinks li a");
+const navItems = document.querySelectorAll(".navlinks li");
 
 menuIcon.addEventListener("click", () => {
     navLinks.classList.toggle("active");
@@ -13,6 +13,15 @@ navItems.forEach((item) => {
         }
     });
 });
+
+function updateNavStateOnResize() {
+    if (window.innerWidth > 1280) {
+        navLinks.classList.remove("active");
+    }
+}
+
+window.addEventListener("resize", updateNavStateOnResize);
+updateNavStateOnResize();
 
 const typed = new Typed('.multiple-text', {
   strings: [
