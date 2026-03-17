@@ -64,8 +64,14 @@ section{
 }
 
 .navlinks{
-    display: flex;
+    display: none;
     gap: 2rem;
+}
+
+@media (min-width: 1281px) {
+    .navlinks {
+        display: flex;
+    }
 }
 
 li a{
@@ -237,6 +243,58 @@ li a:hover::before{
 
 
 /* projects section styling */
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 4rem 1rem;
+}
+.skills .section-title {
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(to right,rgb(0,157,255),rgb(255,0,255));
+    background-clip: text;
+    color: transparent;
+}
+.skills-grid{
+    display:flex;
+    justify-content:center;
+    width:100%;
+}
+.skills-card{
+    max-width: 920px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: rgba(255,255,255,0.85);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.skills-card:hover{
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+}
+.skills-card h3{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #121212;
+}
+.skills-card ul{
+    display: grid;
+    gap: 0.8rem;
+}
+.skills-card li{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #111;
+    line-height: 1.5;
+}
+.skills-card li strong{
+    color: #0b4ce8;
+}
+
 .projects{
     display: flex;
     flex-direction: column;
@@ -278,7 +336,9 @@ li a:hover::before{
 }
 
 .project-card img{
-    width:15vw;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
     border-radius:1rem;
 }
 
@@ -361,6 +421,8 @@ li a:hover::before{
         align-items:center;
         display:none;
         padding:20px;
+        border-radius: 1rem;
+        z-index: 999;
     }
 
     .navlinks.active{
@@ -431,6 +493,26 @@ li a:hover::before{
         gap: 1.5rem;
     }
 
+    .skills .section-title,
+    .projects h2,
+    .contact .section-title,
+    .info-box h1 {
+        font-size: 2.2rem;
+    }
+
+    .skills-card {
+        padding: 1.2rem;
+        border-radius: 1.5rem;
+    }
+
+    .skills-card h3 {
+        font-size: 1.45rem;
+    }
+
+    .skills-card li {
+        font-size: 1rem;
+    }
+
     .project-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -439,12 +521,7 @@ li a:hover::before{
     .project-card {
         max-width: 100%;
         padding: 1.5rem 1rem;
-    }
-
-    .projects h2,
-    .contact .section-title,
-    .info-box h1 {
-        font-size: 2.2rem;
+        overflow: hidden;
     }
 
     .info-box h3,
@@ -454,6 +531,109 @@ li a:hover::before{
     }
 
     .project-card img {
-        width: 50vw;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skills-card {
+        max-width: 100%;
+        padding: 1.6rem;
+    }
+
+    .skills-card li {
+        font-size: 1.1rem;
+    }
+
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-nav {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    .about .about-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .visit-button{
+        display:none;
+    }
+
+    .projects h2,
+    .contact .section-title {
+        font-size: 4.5rem;
+    }
+
+    .info-box h1 {
+        font-size: 3rem;
+    }
+
+    .info-box h3,
+    .info-box span,
+    .contact-info .infos {
+        font-size: 1.5rem;
+    }
+}
+
+
+.footer{
+    padding: 2rem 1rem;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    width: 100%;
+}
+
+.footer-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-nav{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-nav a{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover{
+    color: rgb(0,157,255);
+}
+
+.footer p{
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 700px) {
+    .footer-container {
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
 }
